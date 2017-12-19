@@ -1,0 +1,26 @@
+
+Septa:
+            "orig_train": "6246",
+            "orig_line": "Manayunk/Norristown",
+            "orig_departure_time": " 4:34PM",
+            "orig_arrival_time": " 4:52PM",
+            "orig_delay": "On time",
+            "isdirect": "true"
+
+
+Septa Stats
+            "id": "6246-Norristown",
+            "time": "2017-12-11T16:28:44",
+            "late": "0",
+            "lat": "39.953594465",
+            "lon": "-75.165515185",
+            "nextstop": "Jefferson Station",
+            "source": "30th St",
+            "dest": "Norristown"
+
+
+
+My Train Object:
+            "name": [$septa.orig_train, $septa-stats.id[before '-']] . "-" . [$septa.orig_line, $septa-stats.meta_data[line],
+            "minutes-late": [$septa.orig_delay == "On time"? 0 : $septa.orig_delay, $septa-stats.late],
+            
